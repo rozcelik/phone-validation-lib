@@ -124,40 +124,7 @@ phone('+(852) 0356-4902', {validateMobilePrefix: false});
 // { isValid: true, phoneNumber: '+85203564902', countryIso2: 'HK', countryIso3: 'HKG', countryCode: '+852' }
 // even the phone number start with `0` is not a valid landline phone number
 ```
-Note that the module does not have the capability to determine if the prefix is a valid `landline` prefix number.
 
-### 6. Trunk Code Detection Logic
-
-For some phone numbers, such as this sample UK phone number:
-
-```
-+44 07911 123456
-```
-
-There is a trunk code `0` after the country code `+44` so that it is unable to match any correct country.
-
-Hence the module will try to remove 1 digit after the country code,
-
-and try to detect:
-
-```
-+44 7911 123456
-```
-
-and it would become a valid UK phone number now.
-
-```javascript
-phone('+4407911 123456')
-// { isValid: true, phoneNumber: '+447911123456', countryIso2: 'GB', countryIso3: 'GBR', countryCode: '+44' }
-```
-
-If you want to disable this behavior, 
-please set `strictDetection` to `true`:
-
-```javascript
-phone('+4407911 123456', {strictDetection: true})
-// { isValid: false }
-```
 ## License
 
 This project is licensed under the [MIT license](https://github.com/AfterShip/phone/blob/master/LICENSE).
