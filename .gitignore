@@ -1,0 +1,29 @@
+node_modules/
+
+.idea
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+npm-debug.log
+
+.publishrc
+
+# build output
+dist
+web
+
+coverage
+
+#.env
+.env
+
+# stackdriver
+stackdriver
+
+# logs
+logs
+
+# vscode
+.vscode
